@@ -11,7 +11,7 @@ def prims(graph: graphs.Graph, root: int):
     while len(mst) < len(graph.nodes):
         min_dist = [graph.nodes[root], sys.maxsize]
         for i in range(len(mst)):
-            for _node in mst[i].neighbors_2:
+            for _node in mst[i].neighbors:
                 if _node[0].visited is False and _node[1] < min_dist[1]:
                     min_dist = _node
         min_dist[0].visited = True
