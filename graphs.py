@@ -2,8 +2,8 @@
     Project: CSC-445 - Algorithms
     Author: Ryan Clendenning, Kamylo Ramirez
 
-    This file contains the data structures
-    for the Layer 2 & Layer 3 topologies.
+    This file contains Graph and Node data
+    structures for the Layer 2 & Layer 3 topologies.
 
 """
 
@@ -35,6 +35,11 @@ class Graph(object):
         for node in self.nodes:
             if node.initialized is False:
                 self.nodes.remove(node)
+
+    # method for resetting the attribute values post algorithm
+    def reset(self):
+        for node in self.nodes:
+            node.visited = False
 
     # method for inserting Nodes into the graph
     def insert_node(self, name: int, data: str):
@@ -112,5 +117,29 @@ def gen_gfg_graph():
     graph.add_neighbor(5, 4, 10)
     graph.add_neighbor(5, 3, 14)
     graph.add_neighbor(3, 4, 9)
+
+    return graph
+
+
+def gen_programiz_graph():
+    graph = Graph(6)
+
+    # Create the nodes for the graph
+    graph.insert_node(0, 'A')
+    graph.insert_node(1, 'B')
+    graph.insert_node(2, 'C')
+    graph.insert_node(3, 'D')
+    graph.insert_node(4, 'E')
+    graph.insert_node(4, 'F')
+
+    # Connect the nodes
+    graph.add_neighbor(0, 1, 4)
+    graph.add_neighbor(0, 2, 2)
+    graph.add_neighbor(1, 2, 4)
+    graph.add_neighbor(2, 3, 1)
+    graph.add_neighbor(2, 4, 6)
+    graph.add_neighbor(2, 5, 3)
+    graph.add_neighbor(3, 4, 3)
+    graph.add_neighbor(4, 5, 2)
 
     return graph
