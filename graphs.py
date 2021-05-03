@@ -121,18 +121,19 @@ def gen_gfg_graph():
     return graph
 
 
+# method to create the programiz graph
 def gen_programiz_graph():
-    graph = Graph(6)
+    graph  = Graph(6)
 
-    # Create the nodes for the graph
+    # create the nodes for the graph
     graph.insert_node(0, 'A')
     graph.insert_node(1, 'B')
     graph.insert_node(2, 'C')
     graph.insert_node(3, 'D')
     graph.insert_node(4, 'E')
-    graph.insert_node(4, 'F')
+    graph.insert_node(5, 'F')
 
-    # Connect the nodes
+    # connect the nodes
     graph.add_neighbor(0, 1, 4)
     graph.add_neighbor(0, 2, 2)
     graph.add_neighbor(1, 2, 4)
@@ -143,3 +144,4 @@ def gen_programiz_graph():
     graph.add_neighbor(4, 5, 2)
 
     return graph
+
